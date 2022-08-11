@@ -1,0 +1,102 @@
+.carousel {
+  // Use vw to set width/max-width here. Otherwise,
+  // overflowed images expands the entire page width.
+  // Even if "overflow" property is set to "hidden."
+  // Not sure why at this point. need to figure that out.
+  width: clamp(600px, 65vw, 1000px);
+  overflow: hidden;
+  border-radius: var(--border-radius-round);
+  box-shadow: 0 0 20px rgba(160, 160, 160, 0.2);
+  margin: 0 auto;
+
+  background-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.25) 1%,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 0) 90%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+
+  .app__skills-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.7rem;
+    .app__skills-item {
+      width: 130px;
+      height: 130px;
+
+      img {
+        width: 130px;
+        height: 130px;
+        padding: 1rem;
+        pointer-events: none;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 80vw;
+    margin-left: 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 85vw;
+    .app__skills-container {
+      .app__skills-item {
+        width: 100px;
+        height: 100px;
+
+        img {
+          width: 100px;
+          height: 100px;
+          padding: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+.scroll_tip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 0.7rem;
+
+  .leftArrow,
+  .rightArrow {
+    object-fit: contain;
+    width: clamp(200px, 1vw, 235px);
+
+    opacity: 0.7;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: var(--gray);
+  }
+
+  @media screen and (max-width: 767px) {
+    .rightArrow {
+      object-fit: cover;
+      object-position: right;
+      width: 98px;
+      height: 18px;
+    }
+    .leftArrow {
+      object-fit: cover;
+      object-position: left;
+      width: 98px;
+      height: 18px;
+    }
+    p {
+      font-size: 1rem;
+      margin: 0 1rem;
+    }
+  }
+}
