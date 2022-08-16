@@ -139,7 +139,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      gap: 1.5rem;
+      gap: 1.1rem;
 
       h3 {
         font-family: var(--font-main);
@@ -151,6 +151,7 @@
         font-size: calc(var(--p-font) * 1rem);
         max-width: calc(57ch / var(--p-font));
         line-height: 1.7;
+        // white-space: pre-wrap;
       }
 
       @media screen and (min-width: 2000px) {

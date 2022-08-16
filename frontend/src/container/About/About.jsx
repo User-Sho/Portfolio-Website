@@ -9,14 +9,28 @@ import "./About.scss";
 
 const About = () => {
   const [resume, setResume] = useState([]);
+  const [title, setTitle] = useState([]);
+  const [text, setText] = useState([]);
 
   useEffect(() => {
     const query = '*[_type == "resume"] {"resumeURL": myResume.asset->url}';
+    const desc = '*[_type == "about"]';
+
+    client.fetch(desc).then((data) => {
+      setTitle(data[0].aboutTitle);
+      setText(data[0].aboutText);
+    });
 
     client.fetch(query).then((data) => {
       setResume(data[0].resumeURL);
     });
   }, []);
+
+  function textArray(blocks = []) {
+    return blocks.map((block) => {
+      return block.children.map((child) => child.text);
+    });
+  }
 
   return (
     <>
@@ -71,16 +85,10 @@ const About = () => {
           className="app__about-desc-container"
         >
           <article className="app__about-descriptions">
-            <h3>Hi, Coding Zamurai here.</h3>
-            <p className="p-text">
-              lorem 0000 ipsum dolor sit amet, ipsum dolor sit amet, con lorem
-              lorem ipsum dolor lorem ipsum dolor sit amet, con lorem lorem
-              ipsum dolor lorem ipsum dolor sit amet, con lorem lorem ipsum
-              dolor lorem ipsum dolor sit amet, con lorem lorem ipsum dolorlorem
-              ipsum dolor sit amet, con lorem lorem ipsum dolor lorem ipsum
-              dolor sit amet, con lorem lorem ipsum dolor lorem ipsum dolor sit
-              amet.
-            </p>
+            <h3>{title}</h3>
+            {textArray(text).map((paragraph, index) => (
+              <p key={`para-${index}`}>{paragraph}</p>
+            ))}
           </article>
           <div className="app__about-btns">
             <a href="#contact">

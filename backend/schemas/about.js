@@ -11,7 +11,8 @@ export default {
     {
       name: "aboutText",
       title: "About Text",
-      type: "text",
+      type: "array",
+      of: [{ type: "block" }],
     },
   ],
 };
