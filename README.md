@@ -8,4 +8,11 @@ After going through some coding tutorials, I felt it's time to see what I can cr
   
 ## Solution / Action
 As I didn't have a portfolio website, I decided to get my hands dirty building one for my personal use.  
+  
+  
+## Things need to be addressed 
+- Make the code DRY
+- Refine the code and design
 
+
+###### Not Exhausitve
