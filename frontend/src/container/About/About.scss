@@ -32,7 +32,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 2rem;
+  // gap: 2rem;
 
   margin-top: 3rem;
 
@@ -42,15 +42,19 @@
     align-items: center;
   }
 
+  // About image container
   .app__about-img-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 
+    transform: translateX(-2rem);
+
     @media screen and (max-width: 1023px) {
       flex-direction: row-reverse;
     }
+
     .app__about-profImg-top {
       width: 140px;
       height: 140px;
@@ -120,6 +124,7 @@
     }
   }
 
+  // About descriptions container
   .app__about-desc-container {
     display: flex;
     flex-direction: column;
@@ -129,6 +134,7 @@
     @media screen and (max-width: 1023px) {
       align-items: center;
     }
+
     .app__about-descriptions {
       --p-font: 1.22;
 
