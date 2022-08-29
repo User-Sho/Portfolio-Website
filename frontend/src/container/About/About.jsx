@@ -60,7 +60,7 @@ const About = () => {
             <img src={images.prof} alt="About prof top" />
           </motion.div>
           <motion.div
-            whileInView={{ opacity: [0, 0.6], y: [50, 0] }}
+            whileInView={{ opacity: [0, 0.45], y: [50, 0] }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             // viewport={{ once: true }}
             className="app__about-profImg-middle"
@@ -68,7 +68,7 @@ const About = () => {
             <img src={images.prof} alt="About prof middle" />
           </motion.div>
           <motion.div
-            whileInView={{ opacity: [0, 9], y: [50, 0] }}
+            whileInView={{ opacity: [0, 0.6], y: [50, 0] }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             // viewport={{ once: true }}
             className="app__about-profImg-bottom"
@@ -77,30 +77,32 @@ const About = () => {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ y: [50, 0], opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          // viewport={{ once: true }}
-          className="app__about-desc-container"
-        >
-          <article className="app__about-descriptions">
-            <h3>{title}</h3>
-            {textArray(text).map((paragraph, index) => (
-              <p key={`para-${index}`}>{paragraph}</p>
-            ))}
-          </article>
-          <div className="app__about-btns">
-            <a href="#contact">
-              <button type="button" className="btnContact ">
-                Contact
+        <div className="app__about-desc-position">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ y: [50, 0], opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            // viewport={{ once: true }}
+            className="app__about-desc-container"
+          >
+            <article className="app__about-descriptions">
+              <h3>{title}</h3>
+              {textArray(text).map((paragraph, index) => (
+                <p key={`para-${index}`}>{paragraph}</p>
+              ))}
+            </article>
+            <div className="app__about-btns">
+              <a href="#contact">
+                <button type="button" className="btnContact ">
+                  Contact
+                </button>
+              </a>
+              <button type="button" className="btnResume ">
+                <a href={`${resume}?dl=`}>résumé</a>
               </button>
-            </a>
-            <button type="button" className="btnResume ">
-              <a href={`${resume}?dl=`}>résumé</a>
-            </button>
-          </div>
-        </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </>
   );

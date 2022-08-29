@@ -140,7 +140,7 @@ const Certificates = () => {
       )}
 
       <div className="app__certificates-skillsHeader">
-        <h3>tech skill arsenal</h3>
+        <h3>skill arsenal</h3>
       </div>
       <Carousel ref={crlRef} skills={skills} scrollWidth={scrollWidth} />
     </>
