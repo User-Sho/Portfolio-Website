@@ -196,4 +196,10 @@
   background-attachment: fixed;
   background-position: center bottom;
   background-size: cover;
+
+  @media screen and (max-width:1023px) {
+    background-attachment:none;
+    background-size: 100vh auto;
+    
+  }
 }
